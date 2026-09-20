@@ -1,0 +1,1473 @@
+{
+  "folds": 5,
+  "models": {
+    "knn": [
+      {
+        "config_id": "knn_001",
+        "model_params": {
+          "metric": "euclidean",
+          "n_neighbors": 69,
+          "weights": "uniform"
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "knn_002",
+        "model_params": {
+          "metric": "euclidean",
+          "n_neighbors": 69,
+          "weights": "uniform"
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "knn_003",
+        "model_params": {
+          "metric": "manhattan",
+          "n_neighbors": 69,
+          "weights": "uniform"
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "knn_004",
+        "model_params": {
+          "metric": "manhattan",
+          "n_neighbors": 69,
+          "weights": "uniform"
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "knn_005",
+        "model_params": {
+          "metric": "mahalanobis",
+          "n_neighbors": 69,
+          "weights": "uniform"
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "knn_006",
+        "model_params": {
+          "metric": "mahalanobis",
+          "n_neighbors": 69,
+          "weights": "uniform"
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "knn_007",
+        "model_params": {
+          "metric": "euclidean",
+          "n_neighbors": 79,
+          "weights": "uniform"
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "knn_008",
+        "model_params": {
+          "metric": "euclidean",
+          "n_neighbors": 79,
+          "weights": "uniform"
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "knn_009",
+        "model_params": {
+          "metric": "manhattan",
+          "n_neighbors": 79,
+          "weights": "uniform"
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "knn_010",
+        "model_params": {
+          "metric": "manhattan",
+          "n_neighbors": 79,
+          "weights": "uniform"
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "knn_011",
+        "model_params": {
+          "metric": "mahalanobis",
+          "n_neighbors": 79,
+          "weights": "uniform"
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "knn_012",
+        "model_params": {
+          "metric": "mahalanobis",
+          "n_neighbors": 79,
+          "weights": "uniform"
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "knn_013",
+        "model_params": {
+          "metric": "euclidean",
+          "n_neighbors": 89,
+          "weights": "uniform"
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "knn_014",
+        "model_params": {
+          "metric": "euclidean",
+          "n_neighbors": 89,
+          "weights": "uniform"
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "knn_015",
+        "model_params": {
+          "metric": "manhattan",
+          "n_neighbors": 89,
+          "weights": "uniform"
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "knn_016",
+        "model_params": {
+          "metric": "manhattan",
+          "n_neighbors": 89,
+          "weights": "uniform"
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "knn_017",
+        "model_params": {
+          "metric": "mahalanobis",
+          "n_neighbors": 89,
+          "weights": "uniform"
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "knn_018",
+        "model_params": {
+          "metric": "mahalanobis",
+          "n_neighbors": 89,
+          "weights": "uniform"
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "knn_019",
+        "model_params": {
+          "metric": "euclidean",
+          "n_neighbors": 99,
+          "weights": "uniform"
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "knn_020",
+        "model_params": {
+          "metric": "euclidean",
+          "n_neighbors": 99,
+          "weights": "uniform"
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "knn_021",
+        "model_params": {
+          "metric": "manhattan",
+          "n_neighbors": 99,
+          "weights": "uniform"
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "knn_022",
+        "model_params": {
+          "metric": "manhattan",
+          "n_neighbors": 99,
+          "weights": "uniform"
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "knn_023",
+        "model_params": {
+          "metric": "mahalanobis",
+          "n_neighbors": 99,
+          "weights": "uniform"
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "knn_024",
+        "model_params": {
+          "metric": "mahalanobis",
+          "n_neighbors": 99,
+          "weights": "uniform"
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "knn_025",
+        "model_params": {
+          "metric": "euclidean",
+          "n_neighbors": 109,
+          "weights": "uniform"
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "knn_026",
+        "model_params": {
+          "metric": "euclidean",
+          "n_neighbors": 109,
+          "weights": "uniform"
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "knn_027",
+        "model_params": {
+          "metric": "manhattan",
+          "n_neighbors": 109,
+          "weights": "uniform"
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "knn_028",
+        "model_params": {
+          "metric": "manhattan",
+          "n_neighbors": 109,
+          "weights": "uniform"
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "knn_029",
+        "model_params": {
+          "metric": "mahalanobis",
+          "n_neighbors": 109,
+          "weights": "uniform"
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "knn_030",
+        "model_params": {
+          "metric": "mahalanobis",
+          "n_neighbors": 109,
+          "weights": "uniform"
+        },
+        "scale_numeric": false
+      }
+    ],
+    "logistic": [
+      {
+        "config_id": "logistic_001",
+        "model_params": {
+          "C": 0.01
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "logistic_002",
+        "model_params": {
+          "C": 0.01
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "logistic_003",
+        "model_params": {
+          "C": 0.1
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "logistic_004",
+        "model_params": {
+          "C": 0.1
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "logistic_005",
+        "model_params": {
+          "C": 1.0
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "logistic_006",
+        "model_params": {
+          "C": 1.0
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "logistic_007",
+        "model_params": {
+          "C": 10.0
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "logistic_008",
+        "model_params": {
+          "C": 10.0
+        },
+        "scale_numeric": false
+      }
+    ],
+    "mlp": [
+      {
+        "config_id": "mlp_001",
+        "model_params": {
+          "alpha": 0.0001,
+          "hidden_layer_sizes": [
+            16
+          ],
+          "learning_rate_init": 0.001
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "mlp_002",
+        "model_params": {
+          "alpha": 0.0001,
+          "hidden_layer_sizes": [
+            16
+          ],
+          "learning_rate_init": 0.001
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "mlp_003",
+        "model_params": {
+          "alpha": 0.0001,
+          "hidden_layer_sizes": [
+            16
+          ],
+          "learning_rate_init": 0.01
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "mlp_004",
+        "model_params": {
+          "alpha": 0.0001,
+          "hidden_layer_sizes": [
+            16
+          ],
+          "learning_rate_init": 0.01
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "mlp_005",
+        "model_params": {
+          "alpha": 0.001,
+          "hidden_layer_sizes": [
+            16
+          ],
+          "learning_rate_init": 0.001
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "mlp_006",
+        "model_params": {
+          "alpha": 0.001,
+          "hidden_layer_sizes": [
+            16
+          ],
+          "learning_rate_init": 0.001
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "mlp_007",
+        "model_params": {
+          "alpha": 0.001,
+          "hidden_layer_sizes": [
+            16
+          ],
+          "learning_rate_init": 0.01
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "mlp_008",
+        "model_params": {
+          "alpha": 0.001,
+          "hidden_layer_sizes": [
+            16
+          ],
+          "learning_rate_init": 0.01
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "mlp_009",
+        "model_params": {
+          "alpha": 0.0001,
+          "hidden_layer_sizes": [
+            32
+          ],
+          "learning_rate_init": 0.001
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "mlp_010",
+        "model_params": {
+          "alpha": 0.0001,
+          "hidden_layer_sizes": [
+            32
+          ],
+          "learning_rate_init": 0.001
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "mlp_011",
+        "model_params": {
+          "alpha": 0.0001,
+          "hidden_layer_sizes": [
+            32
+          ],
+          "learning_rate_init": 0.01
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "mlp_012",
+        "model_params": {
+          "alpha": 0.0001,
+          "hidden_layer_sizes": [
+            32
+          ],
+          "learning_rate_init": 0.01
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "mlp_013",
+        "model_params": {
+          "alpha": 0.001,
+          "hidden_layer_sizes": [
+            32
+          ],
+          "learning_rate_init": 0.001
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "mlp_014",
+        "model_params": {
+          "alpha": 0.001,
+          "hidden_layer_sizes": [
+            32
+          ],
+          "learning_rate_init": 0.001
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "mlp_015",
+        "model_params": {
+          "alpha": 0.001,
+          "hidden_layer_sizes": [
+            32
+          ],
+          "learning_rate_init": 0.01
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "mlp_016",
+        "model_params": {
+          "alpha": 0.001,
+          "hidden_layer_sizes": [
+            32
+          ],
+          "learning_rate_init": 0.01
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "mlp_017",
+        "model_params": {
+          "alpha": 0.0001,
+          "hidden_layer_sizes": [
+            32,
+            16
+          ],
+          "learning_rate_init": 0.001
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "mlp_018",
+        "model_params": {
+          "alpha": 0.0001,
+          "hidden_layer_sizes": [
+            32,
+            16
+          ],
+          "learning_rate_init": 0.001
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "mlp_019",
+        "model_params": {
+          "alpha": 0.0001,
+          "hidden_layer_sizes": [
+            32,
+            16
+          ],
+          "learning_rate_init": 0.01
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "mlp_020",
+        "model_params": {
+          "alpha": 0.0001,
+          "hidden_layer_sizes": [
+            32,
+            16
+          ],
+          "learning_rate_init": 0.01
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "mlp_021",
+        "model_params": {
+          "alpha": 0.001,
+          "hidden_layer_sizes": [
+            32,
+            16
+          ],
+          "learning_rate_init": 0.001
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "mlp_022",
+        "model_params": {
+          "alpha": 0.001,
+          "hidden_layer_sizes": [
+            32,
+            16
+          ],
+          "learning_rate_init": 0.001
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "mlp_023",
+        "model_params": {
+          "alpha": 0.001,
+          "hidden_layer_sizes": [
+            32,
+            16
+          ],
+          "learning_rate_init": 0.01
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "mlp_024",
+        "model_params": {
+          "alpha": 0.001,
+          "hidden_layer_sizes": [
+            32,
+            16
+          ],
+          "learning_rate_init": 0.01
+        },
+        "scale_numeric": false
+      }
+    ],
+    "perceptron": [
+      {
+        "config_id": "perceptron_001",
+        "model_params": {
+          "max_iter": 200,
+          "penalty": null,
+          "tol": 0.001
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "perceptron_002",
+        "model_params": {
+          "max_iter": 200,
+          "penalty": null,
+          "tol": 0.001
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "perceptron_003",
+        "model_params": {
+          "max_iter": 200,
+          "penalty": null,
+          "tol": 0.0001
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "perceptron_004",
+        "model_params": {
+          "max_iter": 200,
+          "penalty": null,
+          "tol": 0.0001
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "perceptron_005",
+        "model_params": {
+          "max_iter": 300,
+          "penalty": null,
+          "tol": 0.001
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "perceptron_006",
+        "model_params": {
+          "max_iter": 300,
+          "penalty": null,
+          "tol": 0.001
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "perceptron_007",
+        "model_params": {
+          "max_iter": 300,
+          "penalty": null,
+          "tol": 0.0001
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "perceptron_008",
+        "model_params": {
+          "max_iter": 300,
+          "penalty": null,
+          "tol": 0.0001
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "perceptron_009",
+        "model_params": {
+          "max_iter": 500,
+          "penalty": null,
+          "tol": 0.001
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "perceptron_010",
+        "model_params": {
+          "max_iter": 500,
+          "penalty": null,
+          "tol": 0.001
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "perceptron_011",
+        "model_params": {
+          "max_iter": 500,
+          "penalty": null,
+          "tol": 0.0001
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "perceptron_012",
+        "model_params": {
+          "max_iter": 500,
+          "penalty": null,
+          "tol": 0.0001
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "perceptron_013",
+        "model_params": {
+          "alpha": 0.001,
+          "max_iter": 200,
+          "penalty": "l1",
+          "tol": 0.001
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "perceptron_014",
+        "model_params": {
+          "alpha": 0.001,
+          "max_iter": 200,
+          "penalty": "l1",
+          "tol": 0.001
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "perceptron_015",
+        "model_params": {
+          "alpha": 0.001,
+          "max_iter": 200,
+          "penalty": "l1",
+          "tol": 0.0001
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "perceptron_016",
+        "model_params": {
+          "alpha": 0.001,
+          "max_iter": 200,
+          "penalty": "l1",
+          "tol": 0.0001
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "perceptron_017",
+        "model_params": {
+          "alpha": 0.001,
+          "max_iter": 300,
+          "penalty": "l1",
+          "tol": 0.001
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "perceptron_018",
+        "model_params": {
+          "alpha": 0.001,
+          "max_iter": 300,
+          "penalty": "l1",
+          "tol": 0.001
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "perceptron_019",
+        "model_params": {
+          "alpha": 0.001,
+          "max_iter": 300,
+          "penalty": "l1",
+          "tol": 0.0001
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "perceptron_020",
+        "model_params": {
+          "alpha": 0.001,
+          "max_iter": 300,
+          "penalty": "l1",
+          "tol": 0.0001
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "perceptron_021",
+        "model_params": {
+          "alpha": 0.001,
+          "max_iter": 500,
+          "penalty": "l1",
+          "tol": 0.001
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "perceptron_022",
+        "model_params": {
+          "alpha": 0.001,
+          "max_iter": 500,
+          "penalty": "l1",
+          "tol": 0.001
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "perceptron_023",
+        "model_params": {
+          "alpha": 0.001,
+          "max_iter": 500,
+          "penalty": "l1",
+          "tol": 0.0001
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "perceptron_024",
+        "model_params": {
+          "alpha": 0.001,
+          "max_iter": 500,
+          "penalty": "l1",
+          "tol": 0.0001
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "perceptron_025",
+        "model_params": {
+          "alpha": 0.01,
+          "max_iter": 200,
+          "penalty": "l1",
+          "tol": 0.001
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "perceptron_026",
+        "model_params": {
+          "alpha": 0.01,
+          "max_iter": 200,
+          "penalty": "l1",
+          "tol": 0.001
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "perceptron_027",
+        "model_params": {
+          "alpha": 0.01,
+          "max_iter": 200,
+          "penalty": "l1",
+          "tol": 0.0001
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "perceptron_028",
+        "model_params": {
+          "alpha": 0.01,
+          "max_iter": 200,
+          "penalty": "l1",
+          "tol": 0.0001
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "perceptron_029",
+        "model_params": {
+          "alpha": 0.01,
+          "max_iter": 300,
+          "penalty": "l1",
+          "tol": 0.001
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "perceptron_030",
+        "model_params": {
+          "alpha": 0.01,
+          "max_iter": 300,
+          "penalty": "l1",
+          "tol": 0.001
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "perceptron_031",
+        "model_params": {
+          "alpha": 0.01,
+          "max_iter": 300,
+          "penalty": "l1",
+          "tol": 0.0001
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "perceptron_032",
+        "model_params": {
+          "alpha": 0.01,
+          "max_iter": 300,
+          "penalty": "l1",
+          "tol": 0.0001
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "perceptron_033",
+        "model_params": {
+          "alpha": 0.01,
+          "max_iter": 500,
+          "penalty": "l1",
+          "tol": 0.001
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "perceptron_034",
+        "model_params": {
+          "alpha": 0.01,
+          "max_iter": 500,
+          "penalty": "l1",
+          "tol": 0.001
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "perceptron_035",
+        "model_params": {
+          "alpha": 0.01,
+          "max_iter": 500,
+          "penalty": "l1",
+          "tol": 0.0001
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "perceptron_036",
+        "model_params": {
+          "alpha": 0.01,
+          "max_iter": 500,
+          "penalty": "l1",
+          "tol": 0.0001
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "perceptron_037",
+        "model_params": {
+          "alpha": 0.001,
+          "max_iter": 200,
+          "penalty": "l2",
+          "tol": 0.001
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "perceptron_038",
+        "model_params": {
+          "alpha": 0.001,
+          "max_iter": 200,
+          "penalty": "l2",
+          "tol": 0.001
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "perceptron_039",
+        "model_params": {
+          "alpha": 0.001,
+          "max_iter": 200,
+          "penalty": "l2",
+          "tol": 0.0001
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "perceptron_040",
+        "model_params": {
+          "alpha": 0.001,
+          "max_iter": 200,
+          "penalty": "l2",
+          "tol": 0.0001
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "perceptron_041",
+        "model_params": {
+          "alpha": 0.001,
+          "max_iter": 300,
+          "penalty": "l2",
+          "tol": 0.001
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "perceptron_042",
+        "model_params": {
+          "alpha": 0.001,
+          "max_iter": 300,
+          "penalty": "l2",
+          "tol": 0.001
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "perceptron_043",
+        "model_params": {
+          "alpha": 0.001,
+          "max_iter": 300,
+          "penalty": "l2",
+          "tol": 0.0001
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "perceptron_044",
+        "model_params": {
+          "alpha": 0.001,
+          "max_iter": 300,
+          "penalty": "l2",
+          "tol": 0.0001
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "perceptron_045",
+        "model_params": {
+          "alpha": 0.001,
+          "max_iter": 500,
+          "penalty": "l2",
+          "tol": 0.001
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "perceptron_046",
+        "model_params": {
+          "alpha": 0.001,
+          "max_iter": 500,
+          "penalty": "l2",
+          "tol": 0.001
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "perceptron_047",
+        "model_params": {
+          "alpha": 0.001,
+          "max_iter": 500,
+          "penalty": "l2",
+          "tol": 0.0001
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "perceptron_048",
+        "model_params": {
+          "alpha": 0.001,
+          "max_iter": 500,
+          "penalty": "l2",
+          "tol": 0.0001
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "perceptron_049",
+        "model_params": {
+          "alpha": 0.01,
+          "max_iter": 200,
+          "penalty": "l2",
+          "tol": 0.001
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "perceptron_050",
+        "model_params": {
+          "alpha": 0.01,
+          "max_iter": 200,
+          "penalty": "l2",
+          "tol": 0.001
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "perceptron_051",
+        "model_params": {
+          "alpha": 0.01,
+          "max_iter": 200,
+          "penalty": "l2",
+          "tol": 0.0001
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "perceptron_052",
+        "model_params": {
+          "alpha": 0.01,
+          "max_iter": 200,
+          "penalty": "l2",
+          "tol": 0.0001
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "perceptron_053",
+        "model_params": {
+          "alpha": 0.01,
+          "max_iter": 300,
+          "penalty": "l2",
+          "tol": 0.001
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "perceptron_054",
+        "model_params": {
+          "alpha": 0.01,
+          "max_iter": 300,
+          "penalty": "l2",
+          "tol": 0.001
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "perceptron_055",
+        "model_params": {
+          "alpha": 0.01,
+          "max_iter": 300,
+          "penalty": "l2",
+          "tol": 0.0001
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "perceptron_056",
+        "model_params": {
+          "alpha": 0.01,
+          "max_iter": 300,
+          "penalty": "l2",
+          "tol": 0.0001
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "perceptron_057",
+        "model_params": {
+          "alpha": 0.01,
+          "max_iter": 500,
+          "penalty": "l2",
+          "tol": 0.001
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "perceptron_058",
+        "model_params": {
+          "alpha": 0.01,
+          "max_iter": 500,
+          "penalty": "l2",
+          "tol": 0.001
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "perceptron_059",
+        "model_params": {
+          "alpha": 0.01,
+          "max_iter": 500,
+          "penalty": "l2",
+          "tol": 0.0001
+        },
+        "scale_numeric": true
+      },
+      {
+        "config_id": "perceptron_060",
+        "model_params": {
+          "alpha": 0.01,
+          "max_iter": 500,
+          "penalty": "l2",
+          "tol": 0.0001
+        },
+        "scale_numeric": false
+      }
+    ],
+    "random_forest": [
+      {
+        "config_id": "random_forest_001",
+        "model_params": {
+          "class_weight": null,
+          "max_depth": null,
+          "max_features": "sqrt",
+          "min_samples_leaf": 1,
+          "n_estimators": 10
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "random_forest_002",
+        "model_params": {
+          "class_weight": "balanced",
+          "max_depth": null,
+          "max_features": "sqrt",
+          "min_samples_leaf": 1,
+          "n_estimators": 10
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "random_forest_003",
+        "model_params": {
+          "class_weight": null,
+          "max_depth": null,
+          "max_features": "sqrt",
+          "min_samples_leaf": 5,
+          "n_estimators": 10
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "random_forest_004",
+        "model_params": {
+          "class_weight": "balanced",
+          "max_depth": null,
+          "max_features": "sqrt",
+          "min_samples_leaf": 5,
+          "n_estimators": 10
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "random_forest_005",
+        "model_params": {
+          "class_weight": null,
+          "max_depth": 10,
+          "max_features": "sqrt",
+          "min_samples_leaf": 1,
+          "n_estimators": 10
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "random_forest_006",
+        "model_params": {
+          "class_weight": "balanced",
+          "max_depth": 10,
+          "max_features": "sqrt",
+          "min_samples_leaf": 1,
+          "n_estimators": 10
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "random_forest_007",
+        "model_params": {
+          "class_weight": null,
+          "max_depth": 10,
+          "max_features": "sqrt",
+          "min_samples_leaf": 5,
+          "n_estimators": 10
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "random_forest_008",
+        "model_params": {
+          "class_weight": "balanced",
+          "max_depth": 10,
+          "max_features": "sqrt",
+          "min_samples_leaf": 5,
+          "n_estimators": 10
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "random_forest_009",
+        "model_params": {
+          "class_weight": null,
+          "max_depth": 20,
+          "max_features": "sqrt",
+          "min_samples_leaf": 1,
+          "n_estimators": 10
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "random_forest_010",
+        "model_params": {
+          "class_weight": "balanced",
+          "max_depth": 20,
+          "max_features": "sqrt",
+          "min_samples_leaf": 1,
+          "n_estimators": 10
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "random_forest_011",
+        "model_params": {
+          "class_weight": null,
+          "max_depth": 20,
+          "max_features": "sqrt",
+          "min_samples_leaf": 5,
+          "n_estimators": 10
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "random_forest_012",
+        "model_params": {
+          "class_weight": "balanced",
+          "max_depth": 20,
+          "max_features": "sqrt",
+          "min_samples_leaf": 5,
+          "n_estimators": 10
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "random_forest_013",
+        "model_params": {
+          "class_weight": null,
+          "max_depth": null,
+          "max_features": "sqrt",
+          "min_samples_leaf": 1,
+          "n_estimators": 30
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "random_forest_014",
+        "model_params": {
+          "class_weight": "balanced",
+          "max_depth": null,
+          "max_features": "sqrt",
+          "min_samples_leaf": 1,
+          "n_estimators": 30
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "random_forest_015",
+        "model_params": {
+          "class_weight": null,
+          "max_depth": null,
+          "max_features": "sqrt",
+          "min_samples_leaf": 5,
+          "n_estimators": 30
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "random_forest_016",
+        "model_params": {
+          "class_weight": "balanced",
+          "max_depth": null,
+          "max_features": "sqrt",
+          "min_samples_leaf": 5,
+          "n_estimators": 30
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "random_forest_017",
+        "model_params": {
+          "class_weight": null,
+          "max_depth": 10,
+          "max_features": "sqrt",
+          "min_samples_leaf": 1,
+          "n_estimators": 30
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "random_forest_018",
+        "model_params": {
+          "class_weight": "balanced",
+          "max_depth": 10,
+          "max_features": "sqrt",
+          "min_samples_leaf": 1,
+          "n_estimators": 30
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "random_forest_019",
+        "model_params": {
+          "class_weight": null,
+          "max_depth": 10,
+          "max_features": "sqrt",
+          "min_samples_leaf": 5,
+          "n_estimators": 30
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "random_forest_020",
+        "model_params": {
+          "class_weight": "balanced",
+          "max_depth": 10,
+          "max_features": "sqrt",
+          "min_samples_leaf": 5,
+          "n_estimators": 30
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "random_forest_021",
+        "model_params": {
+          "class_weight": null,
+          "max_depth": 20,
+          "max_features": "sqrt",
+          "min_samples_leaf": 1,
+          "n_estimators": 30
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "random_forest_022",
+        "model_params": {
+          "class_weight": "balanced",
+          "max_depth": 20,
+          "max_features": "sqrt",
+          "min_samples_leaf": 1,
+          "n_estimators": 30
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "random_forest_023",
+        "model_params": {
+          "class_weight": null,
+          "max_depth": 20,
+          "max_features": "sqrt",
+          "min_samples_leaf": 5,
+          "n_estimators": 30
+        },
+        "scale_numeric": false
+      },
+      {
+        "config_id": "random_forest_024",
+        "model_params": {
+          "class_weight": "balanced",
+          "max_depth": 20,
+          "max_features": "sqrt",
+          "min_samples_leaf": 5,
+          "n_estimators": 30
+        },
+        "scale_numeric": false
+      }
+    ]
+  },
+  "models_run_this_invocation": [
+    "logistic"
+  ],
+  "phase": "Phase 1 Full features",
+  "quick": false,
+  "random_state": 42,
+  "selection_metric": "CV ROC-AUC Mean",
+  "test_metrics_used_for_selection": false
+}
