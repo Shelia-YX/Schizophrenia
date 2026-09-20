@@ -1,0 +1,6 @@
+Fold,Perceptron Validation Accuracy,Random Forest Validation Accuracy,Random Forest Mean Tree Depth,Random Forest Maximum Tree Depth
+1,0.999375,1.0,4.866666666666666,13
+2,0.999375,1.0,4.6,13
+3,0.999375,1.0,5.2,16
+4,1.0,1.0,5.033333333333333,15
+5,1.0,1.0,4.633333333333334,12

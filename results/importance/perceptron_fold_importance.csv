@@ -1,0 +1,86 @@
+Fold,Feature,Importance
+1,Age,0.22168010596581378
+1,Hospitalizations,4.380985097575795
+1,Positive Symptom Score,4.653370924337719
+1,Negative Symptom Score,5.761483024888911
+1,GAF Score,5.6425892864993425
+1,Gender,1.0
+1,Education Level,2.23606797749979
+1,Marital Status,1.0
+1,Occupation,1.7320508075688772
+1,Income Level,1.0
+1,Living Area,1.0
+1,Family History,1.0
+1,Substance Use,1.0
+1,Suicide Attempt,1.0
+1,Social Support,1.0
+1,Stress Factors,1.0
+1,Medication Adherence,1.0
+2,Age,1.2180838445379214
+2,Hospitalizations,3.688720829215842
+2,Positive Symptom Score,7.099868468305374
+2,Negative Symptom Score,6.4734291346682395
+2,GAF Score,4.743182662015213
+2,Gender,1.0
+2,Education Level,2.6457513110645907
+2,Marital Status,2.6457513110645907
+2,Occupation,1.0
+2,Income Level,1.0
+2,Living Area,1.0
+2,Family History,1.0
+2,Substance Use,2.23606797749979
+2,Suicide Attempt,3.605551275463989
+2,Social Support,1.7320508075688772
+2,Stress Factors,1.0
+2,Medication Adherence,2.23606797749979
+3,Age,0.37025865861307716
+3,Hospitalizations,5.820145476946489
+3,Positive Symptom Score,5.271680269708389
+3,Negative Symptom Score,7.795428009151642
+3,GAF Score,5.594321643188269
+3,Gender,2.23606797749979
+3,Education Level,1.0
+3,Marital Status,1.7320508075688772
+3,Occupation,1.0
+3,Income Level,1.7320508075688772
+3,Living Area,1.0
+3,Family History,2.23606797749979
+3,Substance Use,2.23606797749979
+3,Suicide Attempt,3.605551275463989
+3,Social Support,2.23606797749979
+3,Stress Factors,1.0
+3,Medication Adherence,1.0
+4,Age,0.07110792734720388
+4,Hospitalizations,4.771575221237252
+4,Positive Symptom Score,7.187898673349782
+4,Negative Symptom Score,6.040327343217947
+4,GAF Score,7.232364942323962
+4,Gender,1.0
+4,Education Level,2.23606797749979
+4,Marital Status,2.23606797749979
+4,Occupation,1.0
+4,Income Level,1.0
+4,Living Area,1.0
+4,Family History,2.23606797749979
+4,Substance Use,2.23606797749979
+4,Suicide Attempt,2.23606797749979
+4,Social Support,2.23606797749979
+4,Stress Factors,1.0
+4,Medication Adherence,1.7320508075688772
+5,Age,0.5420817941505889
+5,Hospitalizations,3.666889488556469
+5,Positive Symptom Score,6.855733847121568
+5,Negative Symptom Score,6.766785138568801
+5,GAF Score,6.596503721086572
+5,Gender,1.0
+5,Education Level,1.7320508075688772
+5,Marital Status,1.0
+5,Occupation,2.6457513110645907
+5,Income Level,1.0
+5,Living Area,1.0
+5,Family History,1.0
+5,Substance Use,2.23606797749979
+5,Suicide Attempt,3.605551275463989
+5,Social Support,1.0
+5,Stress Factors,1.0
+5,Medication Adherence,1.0

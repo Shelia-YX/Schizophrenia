@@ -1,0 +1,31 @@
+{
+  "cv_splits": 5,
+  "perceptron": {
+    "encoded_coefficient_aggregation": "L2 norm",
+    "parameters": {
+      "max_iter": 200,
+      "penalty": null,
+      "tol": 0.001
+    },
+    "scale_numeric": true
+  },
+  "phase": "Phase 2 feature importance",
+  "random_forest": {
+    "feature_perturbation": "tree_path_dependent",
+    "one_hot_grouping": "sum SHAP contributions within each original feature for each observation, then calculate mean absolute value",
+    "parameters": {
+      "class_weight": null,
+      "max_depth": 20,
+      "max_features": "sqrt",
+      "min_samples_leaf": 1,
+      "n_estimators": 30
+    },
+    "phase1_config_id": "random_forest_021",
+    "scale_numeric": false,
+    "shap_explainer": "TreeExplainer"
+  },
+  "random_state": 42,
+  "testing_data_used": false,
+  "top_k": 3,
+  "training_file": "training_data.csv"
+}
