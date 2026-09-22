@@ -18,29 +18,20 @@ from typing import Any
 
 import pandas as pd
 from sklearn.base import clone
-from sklearn.linear_model import LogisticRegression, Perceptron
 from sklearn.metrics import (
-    accuracy_score,
-    average_precision_score,
-    confusion_matrix,
     f1_score,
     make_scorer,
     precision_score,
     recall_score,
-    roc_auc_score,
 )
 from sklearn.model_selection import StratifiedKFold, cross_validate
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.neural_network import MLPClassifier
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.pipeline import Pipeline
 
 from .config_full import (MODEL_DISPLAY_NAMES, get_parameter_configs)
-from preprocessing_and_cv import build_pipeline, load_datasets
-
-from sklearn.base import BaseEstimator, ClassifierMixin
-from sklearn.covariance import LedoitWolf
-from sklearn.utils.validation import check_array, check_is_fitted
+from preprocessing_and_cv import (
+    build_configured_pipeline,
+    evaluate_test_set,
+    load_datasets,
+)
 
 RANDOM_STATE = 42
 
@@ -51,127 +42,6 @@ def load_data(
 ) -> tuple[pd.DataFrame, pd.Series, pd.DataFrame, pd.Series]:
     """Load the fixed Full-feature development and testing sets."""
     return load_datasets(training_path, testing_path)
-
-class MahalanobisKNNClassifier(ClassifierMixin, BaseEstimator):
-    """k-NN that estimates its Mahalanobis precision matrix during fit."""
-
-    def __init__(
-        self,
-        n_neighbors: int = 5,
-        weights: str = "uniform",
-        n_jobs: int | None = None,
-    ):
-        self.n_neighbors = n_neighbors
-        self.weights = weights
-        self.n_jobs = n_jobs
-
-    def fit(self, X, y):
-        X_checked = check_array(X, dtype=float)
-
-        # 只使用传入 fit() 的训练数据估计协方差矩阵
-        self.covariance_estimator_ = LedoitWolf(
-            store_precision=True
-        ).fit(X_checked)
-
-        self.precision_matrix_ = (
-            self.covariance_estimator_.get_precision()
-        )
-
-        self.knn_ = KNeighborsClassifier(
-            n_neighbors=self.n_neighbors,
-            weights=self.weights,
-            metric="mahalanobis",
-            metric_params={
-                "VI": self.precision_matrix_,
-            },
-            algorithm="brute",
-            n_jobs=self.n_jobs,
-        )
-
-        self.knn_.fit(X_checked, y)
-
-        self.classes_ = self.knn_.classes_
-        self.n_features_in_ = X_checked.shape[1]
-
-        return self
-
-    def predict(self, X):
-        check_is_fitted(self, "knn_")
-        X_checked = check_array(X, dtype=float)
-        return self.knn_.predict(X_checked)
-
-    def predict_proba(self, X):
-        check_is_fitted(self, "knn_")
-        X_checked = check_array(X, dtype=float)
-        return self.knn_.predict_proba(X_checked)
-
-    def score(self, X, y):
-        check_is_fitted(self, "knn_")
-        X_checked = check_array(X, dtype=float)
-        return self.knn_.score(X_checked, y)
-
-
-def build_estimator(
-    model_key: str,
-    model_params: dict[str, Any],
-    random_state: int,
-) -> object:
-    """Create one estimator from a frozen configuration."""
-    if model_key == "logistic":
-        return LogisticRegression(
-            max_iter=2000,
-            random_state=random_state,
-            **model_params,
-        )
-    if model_key == "knn":
-        params = model_params.copy()
-        metric = params.pop("metric")
-
-        if metric == "mahalanobis":
-            return MahalanobisKNNClassifier(**params)
-
-        return KNeighborsClassifier(
-            metric=metric,
-            **params,
-        )
-    if model_key == "perceptron":
-        return Perceptron(
-            random_state=random_state,
-            **model_params,
-        )
-    if model_key == "mlp":
-        return MLPClassifier(
-            activation="relu",
-            solver="adam",
-            max_iter=1000,
-            early_stopping=True,
-            n_iter_no_change=20,
-            random_state=random_state,
-            **model_params,
-        )
-    if model_key == "random_forest":
-        return RandomForestClassifier(
-            random_state=random_state,
-            n_jobs=1,
-            **model_params,
-        )
-    raise ValueError(f"Unknown model key: {model_key}")
-
-
-def build_configured_pipeline(
-    model_key: str,
-    model_params: dict[str, Any],
-    scale_numeric: bool,
-    random_state: int,
-) -> Pipeline:
-    """Build one preprocessing/model pipeline for a configuration."""
-    estimator = build_estimator(model_key, model_params, random_state)
-    pipeline = build_pipeline(estimator)
-    if not scale_numeric:
-        pipeline.set_params(
-            preprocessor__numerical__scaler="passthrough"
-        )
-    return pipeline
 
 
 def build_scoring() -> dict[str, object]:
@@ -187,49 +57,6 @@ def build_scoring() -> dict[str, object]:
         "F1": make_scorer(f1_score, zero_division=0),
         "ROC-AUC": "roc_auc",
         "PR-AUC": "average_precision",
-    }
-
-
-def _prediction_scores(fitted_pipeline: Pipeline, X: pd.DataFrame) -> Any:
-    if hasattr(fitted_pipeline, "predict_proba"):
-        probabilities = fitted_pipeline.predict_proba(X)
-        classes = fitted_pipeline.named_steps["model"].classes_.tolist()
-        return probabilities[:, classes.index(1)]
-    if hasattr(fitted_pipeline, "decision_function"):
-        return fitted_pipeline.decision_function(X)
-    raise TypeError("The fitted pipeline cannot produce ranking scores.")
-
-
-def evaluate_test_set(
-    fitted_pipeline: Pipeline,
-    X_test: pd.DataFrame,
-    y_test: pd.Series,
-) -> dict[str, float | int]:
-    """Compute fixed holdout metrics for one already-fitted pipeline."""
-    predictions = fitted_pipeline.predict(X_test)
-    scores = _prediction_scores(fitted_pipeline, X_test)
-    tn, fp, fn, tp = confusion_matrix(
-        y_test,
-        predictions,
-        labels=[0, 1],
-    ).ravel()
-
-    return {
-        "Test Accuracy": float(accuracy_score(y_test, predictions)),
-        "Test Precision": float(
-            precision_score(y_test, predictions, zero_division=0)
-        ),
-        "Test Recall": float(
-            recall_score(y_test, predictions, zero_division=0)
-        ),
-        "Test Specificity": float(tn / (tn + fp)) if (tn + fp) else 0.0,
-        "Test F1": float(f1_score(y_test, predictions, zero_division=0)),
-        "Test ROC-AUC": float(roc_auc_score(y_test, scores)),
-        "Test PR-AUC": float(average_precision_score(y_test, scores)),
-        "Test TN": int(tn),
-        "Test FP": int(fp),
-        "Test FN": int(fn),
-        "Test TP": int(tp),
     }
 
 

@@ -123,6 +123,7 @@ def group_coefficient_l2(
 def group_shap_importance(
     shap_values: np.ndarray,
     original_feature_names: Sequence[str],
+    signed: bool = False,
 ) -> dict[str, float]:
     """Group encoded SHAP contributions, then calculate mean absolute value."""
     values = np.asarray(shap_values, dtype=float)
@@ -135,10 +136,13 @@ def group_shap_importance(
     for index, feature in enumerate(original_feature_names):
         grouped_indices.setdefault(feature, []).append(index)
 
-    return {
-        feature: float(np.mean(np.abs(values[:, indices].sum(axis=1))))
-        for feature, indices in grouped_indices.items()
-    }
+    grouped = {}
+    for feature, indices in grouped_indices.items():
+        contributions = values[:, indices].sum(axis=1)
+        grouped[feature] = float(
+            np.mean(contributions if signed else np.abs(contributions))
+        )
+    return grouped
 
 
 def extract_positive_class_shap(raw_values: Any) -> np.ndarray:
@@ -378,7 +382,16 @@ def run_cross_validated_importance(
             shap_values=positive_shap_values,
             original_feature_names=forest_original_names,
         )
-        shap_rows.extend(_importance_rows(fold, shap_grouped))
+
+        shap_signed = group_shap_importance(
+            shap_values=positive_shap_values,
+            original_feature_names=forest_original_names,
+            signed=True,
+        )
+
+        for row in _importance_rows(fold, shap_grouped):
+            row["Mean Signed SHAP"] = shap_signed[str(row["Feature"])]
+            shap_rows.append(row)
 
         tree_depths = np.array(
             [tree.tree_.max_depth for tree in random_forest.estimators_],
@@ -426,6 +439,7 @@ def build_ranking_comparison(
     }
     shap_columns = {
         "Mean Importance": "SHAP Mean Importance",
+        "Mean Signed SHAP": "SHAP Mean Signed Value",
         "Importance Std": "SHAP Importance Std",
         "Mean Rank": "SHAP Mean Fold Rank",
         "Top 3 Frequency": "SHAP Top 3 Frequency",
@@ -518,6 +532,17 @@ def main() -> None:
     )
     perceptron_summary = summarize_fold_importance(perceptron_folds)
     shap_summary = summarize_fold_importance(shap_folds)
+    signed_summary = (
+        shap_folds.groupby("Feature", as_index=False)["Mean Signed SHAP"]
+        .mean()
+    )
+
+    shap_summary = shap_summary.merge(
+        signed_summary,
+        on="Feature",
+        validate="one_to_one",
+    )
+
     comparison = build_ranking_comparison(
         perceptron_summary=perceptron_summary,
         shap_summary=shap_summary,

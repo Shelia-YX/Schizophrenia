@@ -1,0 +1,137 @@
+{
+  "cv_splits": 5,
+  "dropped_features": [
+    "Negative Symptom Score",
+    "GAF Score",
+    "Positive Symptom Score"
+  ],
+  "feature_sets": {
+    "ablated": [
+      "Age",
+      "Gender",
+      "Education Level",
+      "Marital Status",
+      "Occupation",
+      "Income Level",
+      "Living Area",
+      "Hospitalizations",
+      "Family History",
+      "Substance Use",
+      "Suicide Attempt",
+      "Social Support",
+      "Stress Factors",
+      "Medication Adherence"
+    ],
+    "full": [
+      "Age",
+      "Gender",
+      "Education Level",
+      "Marital Status",
+      "Occupation",
+      "Income Level",
+      "Living Area",
+      "Hospitalizations",
+      "Family History",
+      "Substance Use",
+      "Suicide Attempt",
+      "Positive Symptom Score",
+      "Negative Symptom Score",
+      "GAF Score",
+      "Social Support",
+      "Stress Factors",
+      "Medication Adherence"
+    ]
+  },
+  "metric_difference_definition": "ablated minus full",
+  "metrics": [
+    "Accuracy",
+    "Precision",
+    "Recall",
+    "Specificity",
+    "F1",
+    "ROC-AUC"
+  ],
+  "models_run": [
+    "logistic",
+    "knn",
+    "perceptron",
+    "mlp",
+    "random_forest"
+  ],
+  "phase": "Ablation fixed-parameter feature comparison",
+  "phase1_representative_configurations": {
+    "knn": {
+      "config_id": "knn_002",
+      "model_params": {
+        "metric": "euclidean",
+        "n_neighbors": 69,
+        "weights": "uniform"
+      },
+      "scale_numeric": false
+    },
+    "logistic": {
+      "config_id": "logistic_002",
+      "model_params": {
+        "C": 0.01
+      },
+      "scale_numeric": false
+    },
+    "mlp": {
+      "config_id": "mlp_016",
+      "model_params": {
+        "alpha": 0.001,
+        "hidden_layer_sizes": [
+          32
+        ],
+        "learning_rate_init": 0.01
+      },
+      "scale_numeric": false
+    },
+    "perceptron": {
+      "config_id": "perceptron_002",
+      "model_params": {
+        "max_iter": 200,
+        "penalty": null,
+        "tol": 0.001
+      },
+      "scale_numeric": false
+    },
+    "random_forest": {
+      "config_id": "random_forest_001",
+      "model_params": {
+        "class_weight": null,
+        "max_depth": null,
+        "max_features": "sqrt",
+        "min_samples_leaf": 1,
+        "n_estimators": 10
+      },
+      "scale_numeric": false
+    }
+  },
+  "predictor_count_ablated": 14,
+  "predictor_count_full": 17,
+  "preprocessing": {
+    "categorical": "OneHotEncoder(handle_unknown='ignore', sparse_output=False), fitted within each training fold",
+    "final_test_fit": "same pipeline fitted on all training rows",
+    "knn_distance": "Euclidean for knn_002; no Mahalanobis covariance is fitted",
+    "numeric": "StandardScaler is passthrough for all five frozen Phase 1 configurations (scale_numeric=false); if enabled in another run, it is fitted within each training fold"
+  },
+  "random_state": 42,
+  "same_cv_indices_for_full_and_ablated": true,
+  "scale_numeric_by_model": {
+    "knn": false,
+    "logistic": false,
+    "mlp": false,
+    "perceptron": false,
+    "random_forest": false
+  },
+  "test_evaluation": {
+    "performed": true,
+    "status": "exploratory; Phase 1 evaluated this same test set for all 146 candidate configurations",
+    "used_for_ablation_selection": false
+  },
+  "testing_file": "testing_data.csv",
+  "testing_rows": 2000,
+  "training_file": "training_data.csv",
+  "training_rows": 8000
+}
