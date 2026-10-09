@@ -62,24 +62,24 @@ MODEL_KEYS = (
 # silently re-select parameters from a new result file or from test metrics.
 PHASE1_CONFIGS: dict[str, dict[str, Any]] = {
     "logistic": {
-        "config_id": "logistic_002",
-        "model_params": {"C": 0.01},
-        "scale_numeric": False,
+        "config_id": "logistic_005",
+        "model_params": {"C": 1.0},
+        "scale_numeric": True,
     },
     "knn": {
-        "config_id": "knn_002",
+        "config_id": "knn_008",
         "model_params": {
-            "n_neighbors": 69,
+            "n_neighbors": 79,
             "metric": "euclidean",
             "weights": "uniform",
         },
         "scale_numeric": False,
     },
     "perceptron": {
-        "config_id": "perceptron_002",
+        "config_id": "perceptron_010",
         "model_params": {
             "penalty": None,
-            "max_iter": 200,
+            "max_iter": 500,
             "tol": 0.001,
         },
         "scale_numeric": False,
@@ -94,11 +94,11 @@ PHASE1_CONFIGS: dict[str, dict[str, Any]] = {
         "scale_numeric": False,
     },
     "random_forest": {
-        "config_id": "random_forest_001",
+        "config_id": "random_forest_011",
         "model_params": {
             "n_estimators": 10,
-            "max_depth": None,
-            "min_samples_leaf": 1,
+            "max_depth": 20,
+            "min_samples_leaf": 5,
             "max_features": "sqrt",
             "class_weight": None,
         },
@@ -523,16 +523,16 @@ def run_ablation(
         "metric_difference_definition": "ablated minus full",
         "preprocessing": {
             "numeric": (
-                "StandardScaler is passthrough for all five frozen Phase 1 "
-                "configurations (scale_numeric=false); if enabled in another "
-                "run, it is fitted within each training fold"
+                "StandardScaler is enabled for logistic_005 and passthrough "
+                "for the other four frozen Phase 1 configurations; when "
+                "enabled, it is fitted within each training fold"
             ),
             "categorical": (
                 "OneHotEncoder(handle_unknown='ignore', sparse_output=False), "
                 "fitted within each training fold"
             ),
             "knn_distance": (
-                "Euclidean for knn_002; no Mahalanobis covariance is fitted"
+                "Euclidean for knn_008; no Mahalanobis covariance is fitted"
             ),
             "final_test_fit": "same pipeline fitted on all training rows",
         },

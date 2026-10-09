@@ -1,5 +1,6 @@
 {
   "folds": 5,
+  "additional_selection": "Append the best Perceptron configuration among rows with Scale Numeric=true using the same CV ordering",
   "models": {
     "knn": [
       {
@@ -1469,5 +1470,12 @@
   "quick": false,
   "random_state": 42,
   "selection_metric": "CV ROC-AUC Mean",
+  "selection_order": [
+    "CV ROC-AUC Mean (descending)",
+    "CV F1 Mean (descending)",
+    "CV Accuracy Mean (descending, when available)",
+    "CV Fit Time Mean (s) (ascending)",
+    "Config ID (ascending)"
+  ],
   "test_metrics_used_for_selection": false
 }

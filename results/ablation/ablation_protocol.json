@@ -61,20 +61,20 @@
   "phase": "Ablation fixed-parameter feature comparison",
   "phase1_representative_configurations": {
     "knn": {
-      "config_id": "knn_002",
+      "config_id": "knn_008",
       "model_params": {
         "metric": "euclidean",
-        "n_neighbors": 69,
+        "n_neighbors": 79,
         "weights": "uniform"
       },
       "scale_numeric": false
     },
     "logistic": {
-      "config_id": "logistic_002",
+      "config_id": "logistic_005",
       "model_params": {
-        "C": 0.01
+        "C": 1.0
       },
-      "scale_numeric": false
+      "scale_numeric": true
     },
     "mlp": {
       "config_id": "mlp_016",
@@ -88,21 +88,21 @@
       "scale_numeric": false
     },
     "perceptron": {
-      "config_id": "perceptron_002",
+      "config_id": "perceptron_010",
       "model_params": {
-        "max_iter": 200,
+        "max_iter": 500,
         "penalty": null,
         "tol": 0.001
       },
       "scale_numeric": false
     },
     "random_forest": {
-      "config_id": "random_forest_001",
+      "config_id": "random_forest_011",
       "model_params": {
         "class_weight": null,
-        "max_depth": null,
+        "max_depth": 20,
         "max_features": "sqrt",
-        "min_samples_leaf": 1,
+        "min_samples_leaf": 5,
         "n_estimators": 10
       },
       "scale_numeric": false
@@ -113,14 +113,14 @@
   "preprocessing": {
     "categorical": "OneHotEncoder(handle_unknown='ignore', sparse_output=False), fitted within each training fold",
     "final_test_fit": "same pipeline fitted on all training rows",
-    "knn_distance": "Euclidean for knn_002; no Mahalanobis covariance is fitted",
-    "numeric": "StandardScaler is passthrough for all five frozen Phase 1 configurations (scale_numeric=false); if enabled in another run, it is fitted within each training fold"
+    "knn_distance": "Euclidean for knn_008; no Mahalanobis covariance is fitted",
+    "numeric": "StandardScaler is enabled for logistic_005 and passthrough for the other four frozen Phase 1 configurations; when enabled, it is fitted within each training fold"
   },
   "random_state": 42,
   "same_cv_indices_for_full_and_ablated": true,
   "scale_numeric_by_model": {
     "knn": false,
-    "logistic": false,
+    "logistic": true,
     "mlp": false,
     "perceptron": false,
     "random_forest": false

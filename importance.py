@@ -3,9 +3,10 @@
 This script uses only ``training_data.csv``. It performs five-fold stratified
 cross-validation and produces two complementary original-feature rankings:
 
-1. standardized Perceptron coefficient magnitude; and
-2. Random Forest Tree SHAP importance using the Phase 1 configuration
-   ``random_forest_021``.
+1. standardized Perceptron coefficient magnitude using the best standardized
+   Phase 1 configuration, ``perceptron_015``; and
+2. Random Forest Tree SHAP importance using the overall best Phase 1
+   configuration, ``random_forest_011``.
 
 The preprocessing object is fitted independently inside every training fold.
 One-hot encoded columns are grouped back to their original variables before
@@ -36,17 +37,19 @@ RANDOM_STATE = 42
 CV_SPLITS = 5
 TOP_K = 3
 
+# Best Phase 1 Perceptron configuration with numeric standardization enabled.
 PERCEPTRON_PARAMS: dict[str, Any] = {
-    "penalty": None,
+    "penalty": "l1",
+    "alpha": 0.001,
     "max_iter": 200,
-    "tol": 1e-3,
+    "tol": 1e-4,
 }
 
-# Phase 1 configuration random_forest_021.
+# Overall best Phase 1 Random Forest configuration.
 RANDOM_FOREST_PARAMS: dict[str, Any] = {
-    "n_estimators": 30,
+    "n_estimators": 10,
     "max_depth": 20,
-    "min_samples_leaf": 1,
+    "min_samples_leaf": 5,
     "max_features": "sqrt",
     "class_weight": None,
 }
@@ -207,7 +210,10 @@ def summarize_fold_importance(
         )
         .reset_index(drop=True)
     )
-    summary["Overall Rank"] = np.arange(1, len(summary) + 1)
+    summary["Overall Rank"] = summary["Mean Importance"].rank(
+        method="average",
+        ascending=False,
+    )
     return summary
 
 
@@ -592,12 +598,13 @@ def main() -> None:
         "random_state": RANDOM_STATE,
         "top_k": TOP_K,
         "perceptron": {
+            "phase1_config_id": "perceptron_015",
             "scale_numeric": True,
             "parameters": PERCEPTRON_PARAMS,
             "encoded_coefficient_aggregation": "L2 norm",
         },
         "random_forest": {
-            "phase1_config_id": "random_forest_021",
+            "phase1_config_id": "random_forest_011",
             "scale_numeric": False,
             "parameters": RANDOM_FOREST_PARAMS,
             "shap_explainer": "TreeExplainer",

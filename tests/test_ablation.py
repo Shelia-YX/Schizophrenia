@@ -87,18 +87,28 @@ class AblationRunnerContractTests(unittest.TestCase):
         from ablation.run_ablation import PHASE1_CONFIGS
 
         expected_ids = {
-            "logistic": "logistic_002",
-            "knn": "knn_002",
-            "perceptron": "perceptron_002",
+            "logistic": "logistic_005",
+            "knn": "knn_008",
+            "perceptron": "perceptron_010",
             "mlp": "mlp_016",
-            "random_forest": "random_forest_001",
+            "random_forest": "random_forest_011",
         }
         self.assertEqual(
             {key: config["config_id"] for key, config in PHASE1_CONFIGS.items()},
             expected_ids,
         )
-        self.assertTrue(
-            all(not config["scale_numeric"] for config in PHASE1_CONFIGS.values())
+        self.assertEqual(
+            {
+                key: config["scale_numeric"]
+                for key, config in PHASE1_CONFIGS.items()
+            },
+            {
+                "logistic": True,
+                "knn": False,
+                "perceptron": False,
+                "mlp": False,
+                "random_forest": False,
+            },
         )
 
     def test_shared_splits_are_repeatable(self) -> None:

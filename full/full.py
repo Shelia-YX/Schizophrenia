@@ -166,12 +166,14 @@ def run_model_experiments(
 
 
 def select_best_by_cv(results: pd.DataFrame) -> pd.DataFrame:
-    """Choose one representative configuration per model using CV only."""
+    """Choose model winners and append the best scaled Perceptron by CV."""
     required = {
         "Model",
         "Config ID",
+        "Scale Numeric",
         "CV ROC-AUC Mean",
         "CV F1 Mean",
+        "CV Fit Time Mean (s)",
     }
     missing = required - set(results.columns)
     if missing:
@@ -182,6 +184,8 @@ def select_best_by_cv(results: pd.DataFrame) -> pd.DataFrame:
     if "CV Accuracy Mean" in results.columns:
         sort_columns.append("CV Accuracy Mean")
         ascending.append(False)
+    sort_columns.append("CV Fit Time Mean (s)")
+    ascending.append(True)
     sort_columns.append("Config ID")
     ascending.append(True)
 
@@ -190,7 +194,19 @@ def select_best_by_cv(results: pd.DataFrame) -> pd.DataFrame:
         ascending=ascending,
         kind="stable",
     )
-    return ordered.groupby("Model", as_index=False, sort=True).head(1).reset_index(drop=True)
+    model_winners = ordered.groupby(
+        "Model",
+        as_index=False,
+        sort=True,
+    ).head(1)
+    scaled_perceptron = ordered[
+        (ordered["Model"] == MODEL_DISPLAY_NAMES["perceptron"])
+        & ordered["Scale Numeric"]
+    ].head(1)
+    return pd.concat(
+        [model_winners, scaled_perceptron],
+        ignore_index=True,
+    )
 
 
 def combine_available_results(output_dir: str | Path) -> pd.DataFrame:
@@ -265,6 +281,17 @@ def main() -> None:
         "quick": args.quick,
         "models_run_this_invocation": args.models,
         "selection_metric": "CV ROC-AUC Mean",
+        "selection_order": [
+            "CV ROC-AUC Mean (descending)",
+            "CV F1 Mean (descending)",
+            "CV Accuracy Mean (descending, when available)",
+            "CV Fit Time Mean (s) (ascending)",
+            "Config ID (ascending)",
+        ],
+        "additional_selection": (
+            "Append the best Perceptron configuration among rows with "
+            "Scale Numeric=true using the same CV ordering"
+        ),
         "test_metrics_used_for_selection": False,
         "models": {
             model_key: get_parameter_configs(model_key, quick=args.quick)

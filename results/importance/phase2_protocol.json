@@ -3,10 +3,12 @@
   "perceptron": {
     "encoded_coefficient_aggregation": "L2 norm",
     "parameters": {
+      "alpha": 0.001,
       "max_iter": 200,
-      "penalty": null,
-      "tol": 0.001
+      "penalty": "l1",
+      "tol": 0.0001
     },
+    "phase1_config_id": "perceptron_015",
     "scale_numeric": true
   },
   "phase": "Phase 2 feature importance",
@@ -17,10 +19,10 @@
       "class_weight": null,
       "max_depth": 20,
       "max_features": "sqrt",
-      "min_samples_leaf": 1,
-      "n_estimators": 30
+      "min_samples_leaf": 5,
+      "n_estimators": 10
     },
-    "phase1_config_id": "random_forest_021",
+    "phase1_config_id": "random_forest_011",
     "scale_numeric": false,
     "shap_explainer": "TreeExplainer"
   },

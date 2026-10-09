@@ -1,0 +1,72 @@
+{
+  "comparison_variables": [
+    "Diagnosis",
+    "Positive Symptom Score",
+    "Negative Symptom Score",
+    "Hospitalizations",
+    "Family History",
+    "Substance Use"
+  ],
+  "grouping": {
+    "Diagnosis": {
+      "method": "original categories"
+    },
+    "Family History": {
+      "method": "original categories"
+    },
+    "Hospitalizations": {
+      "groups": {
+        "0": "0",
+        "1-5": "1 through 5",
+        "6+": "6 or more"
+      },
+      "method": "fixed intervals"
+    },
+    "Negative Symptom Score": {
+      "edges": [
+        0.0,
+        23.0,
+        46.0,
+        100.0
+      ],
+      "labels": [
+        "Low",
+        "Medium",
+        "High"
+      ],
+      "method": "training-set tertiles"
+    },
+    "Positive Symptom Score": {
+      "edges": [
+        0.0,
+        23.0,
+        46.0,
+        100.0
+      ],
+      "labels": [
+        "Low",
+        "Medium",
+        "High"
+      ],
+      "method": "training-set tertiles"
+    },
+    "Substance Use": {
+      "method": "original categories"
+    }
+  },
+  "plot": "Gaussian kernel density estimate on a shared x range",
+  "ranking_column": "Consensus Rank",
+  "ranking_file": "feature_ranking_comparison.csv",
+  "testing_data_used": false,
+  "top_features": [
+    "GAF Score",
+    "Positive Symptom Score",
+    "Negative Symptom Score",
+    "Hospitalizations",
+    "Family History",
+    "Substance Use"
+  ],
+  "training_file": "training_data.csv",
+  "training_rows": 8000,
+  "x_feature": "GAF Score"
+}
